@@ -11,12 +11,14 @@ class ECELoss(nn.Module):
     See: Naeini, Mahdi Pakdaman, Gregory F. Cooper, and Milos Hauskrecht.
     "Obtaining Well Calibrated Probabilities Using Bayesian Binning." AAAI.
     2015.
+    
+    refer to: https://github.com/gpleiss/temperature_scaling/blob/master/temperature_scaling.py
     """
     def __init__(self, n_bins=15):
         """
         n_bins (int): number of confidence interval bins
         """
-        super(_ECELoss, self).__init__()
+        super(ECELoss, self).__init__()
         bin_boundaries = torch.linspace(0, 1, n_bins + 1)
         self.bin_lowers = bin_boundaries[:-1]
         self.bin_uppers = bin_boundaries[1:]
