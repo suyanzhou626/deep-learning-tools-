@@ -5,7 +5,9 @@ from torch.nn import functional as F
 
 
 def class_balanced_cross_entropy_loss(output, label, size_average=True, batch_average=True, void_pixels=None):
-    """Define the class balanced cross entropy loss to train the network
+    """
+    refer to: https://github.com/scaelles/DEXTR-PyTorch/blob/master/layers/loss.py
+    Define the class balanced cross entropy loss to train the network
     Args:
     output: Output of the network
     label: Ground truth label
